@@ -1,11 +1,14 @@
-# Course: Spring Framework
+# Course: Spring Framework Initiation
 
 ## Description
 
+Source code of the course over Spring framework 2.5 (taught in 2008) in 32 hours.
+
 ## Exercises / Examples
 
-Description of the executions of which the course is composed:
+List of exercises and examples of course:
 
 - spring-basic-01-minimal: Mínima aplicación en Spring.
 - spring-basic-02-IoC: Configuración de propiedades simples mediante inyección de dependencias
-- spring-basic-03-IoC: Instanciación simple de beans y creación de colaboraciones mediante inyecci�n de dependencias
+- spring-basic-03-IoC: Instanciación simple de beans y creación de colaboraciones mediante inyección de dependencias
+- spring-basic-04-IoC: Otras formas de instanciaci�n e inyección
