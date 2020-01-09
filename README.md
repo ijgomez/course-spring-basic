@@ -11,4 +11,5 @@ List of exercises and examples of course:
 - spring-basic-01-minimal: Mínima aplicación en Spring.
 - spring-basic-02-IoC: Configuración de propiedades simples mediante inyección de dependencias
 - spring-basic-03-IoC: Instanciación simple de beans y creación de colaboraciones mediante inyección de dependencias
-- spring-basic-04-IoC: Otras formas de instanciaci�n e inyección
+- spring-basic-04-IoC: Otras formas de instanciación e inyección
+- spring-basic-05-wiring: Wiring y Reemplazos
