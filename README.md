@@ -13,3 +13,4 @@ List of exercises and examples of course:
 - spring-basic-03-IoC: Instanciación simple de beans y creación de colaboraciones mediante inyección de dependencias
 - spring-basic-04-IoC: Otras formas de instanciación e inyección
 - spring-basic-05-wiring: Wiring y Reemplazos
+- spring-basic-06-events: Ciclo de vida, eventos y postprocesadores
