@@ -15,3 +15,4 @@ List of exercises and examples of course:
 - spring-basic-05-wiring: Wiring y Reemplazos
 - spring-basic-06-events: Ciclo de vida, eventos y postprocesadores
 - spring-basic-07-annotations:
+- spring-basic-08-dao-jdbc: Uso de Spring empleando JDBC como tecnolgía de acceso a datos
