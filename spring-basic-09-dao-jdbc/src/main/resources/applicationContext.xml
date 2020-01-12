@@ -19,22 +19,22 @@
         </property>
     </bean>
     <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">
-        <property name="driverClassName" value="${jdbc.driver}"/>
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.nombre}"/>
-        <property name="password" value="${jdbc.clave}"/>
+        <property name="driverClassName" value="${database.connection.driver}"/>
+        <property name="url" value="${database.connection.url}"/>
+        <property name="username" value="${database.connection.user}"/>
+        <property name="password" value="${database.connection.password}"/>
     </bean>
     
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
     
-    <bean id="servicioContactos" class="curso.jdbc.ServicioContactosDerby">
+    <bean id="servicioContactos" class="org.course.spring.services.impl.hsql.ContactServiceHsqlImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
     
     <aop:config>
-        <aop:advisor pointcut="execution(* *..IServicioContactos.*(..))" advice-ref="txAdvice"/>
+        <aop:advisor pointcut="execution(* *..ContactService.*(..))" advice-ref="txAdvice"/>
     </aop:config>
     
     <tx:advice id="txAdvice">

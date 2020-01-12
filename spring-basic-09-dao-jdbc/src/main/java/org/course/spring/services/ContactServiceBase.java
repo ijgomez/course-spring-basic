@@ -36,9 +36,6 @@ public abstract class ContactServiceBase extends JdbcDaoSupport implements Conta
         actContacto = new ActualizarContacto(getDataSource());
     }
 
-    public ContactServiceBase() {
-    }
-
     @SuppressWarnings("unchecked")
     public List<Contact> getContactos() throws DataAccessException {
         synchronized (this.contactos) {
@@ -64,7 +61,7 @@ public abstract class ContactServiceBase extends JdbcDaoSupport implements Conta
 
         protected ConsultaContactos(DataSource ds) {
             super(ds, 
-                  "SELECT id,nombre,comentario FROM contactos ORDER BY nombre");
+                  "SELECT id,name,comments FROM contacts ORDER BY name");
             compile();
         }
 
@@ -80,7 +77,7 @@ public abstract class ContactServiceBase extends JdbcDaoSupport implements Conta
     protected class NuevoContacto extends SqlUpdate {
 
         protected NuevoContacto(DataSource ds) {
-            super(ds, "INSERT INTO contactos (nombre,comentario) VALUES(?,?)");
+            super(ds, "INSERT INTO contacts (name,comments) VALUES(?,?)");
             declareParameter(new SqlParameter(Types.VARCHAR));
             declareParameter(new SqlParameter(Types.VARCHAR));
             compile();
@@ -102,7 +99,7 @@ public abstract class ContactServiceBase extends JdbcDaoSupport implements Conta
     protected class ActualizarContacto extends SqlUpdate {
 
         protected ActualizarContacto(DataSource ds) {
-            super(ds, "UPDATE contactos SET nombre=?,comentario=? WHERE id=?");
+            super(ds, "UPDATE contacts SET name=?,comments =? WHERE id=?");
             declareParameter(new SqlParameter(Types.VARCHAR));
             declareParameter(new SqlParameter(Types.VARCHAR));
             declareParameter(new SqlParameter(Types.INTEGER));

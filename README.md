@@ -16,4 +16,4 @@ List of exercises and examples of course:
 - spring-basic-06-events: Ciclo de vida, eventos y postprocesadores
 - spring-basic-07-annotations:
 - spring-basic-08-dao-jdbc: Uso de Spring empleando JDBC como tecnolgía de acceso a datos
-- spring-basic-08-dao-jdbc: Uso de Spring empleando JDBC como tecnolgía de acceso a datos, pero empleando una estrategia de codificación menos común.
+- spring-basic-09-dao-jdbc: Uso de Spring empleando JDBC como tecnolgía de acceso a datos, pero empleando una estrategia de codificación menos común.
