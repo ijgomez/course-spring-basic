@@ -20,39 +20,39 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
 
 	@Override
     public Integer contarUsers() throws DataAccessException {
-        return getJdbcTemplate().queryForInt("select count(*) from personas");
+        return getJdbcTemplate().queryForInt("select count(*) from user");
     }
 
 	@Override
     public Integer contarUsersUsandoParametros(String nombre) throws DataAccessException {
-        return getJdbcTemplate().queryForInt("select count(*) from personas where nombre like ?", new Object[]{"%"+nombre+"%"});
+        return getJdbcTemplate().queryForInt("select count(*) from user where name like ?", new Object[]{"%"+nombre+"%"});
     }
 
 	@Override
     public User encontrarUser(Integer id) throws DataAccessException {
-        User persona = (User) getJdbcTemplate().queryForObject("select * from personas where id = ?",new Object[]{id}, new UserRowMapper());
+        User persona = (User) getJdbcTemplate().queryForObject("select * from user where id = ?",new Object[]{id}, new UserRowMapper());
         return persona;
     }
 
 	@SuppressWarnings("unchecked")
 	@Override
     public Collection<User> encontrarTodos() throws DataAccessException {
-        return getJdbcTemplate().query("select * from personas", new UserRowMapper());
+        return getJdbcTemplate().query("select * from user", new UserRowMapper());
     }
 
 	@Override
     public void insertarUser(User persona) throws DataAccessException, UserException {
-        getJdbcTemplate().update("insert into personas (nombre) values (?)", new Object[]{persona.getName()});
+        getJdbcTemplate().update("insert into user (name) values (?)", new Object[]{persona.getName()});
     }
 
 	@Override
     public void actualizarUser(User persona) throws DataAccessException {
-        getJdbcTemplate().update("update personas set nombre = ? where id = ?", new Object[]{persona.getName(),persona.getId()});
+        getJdbcTemplate().update("update user set name = ? where id = ?", new Object[]{persona.getName(),persona.getId()});
     }
 
 	@Override
     public void borrarUser(User persona) throws DataAccessException {
-        getJdbcTemplate().update("delete from personas where id = ?", new Object[]{persona.getId()});
+        getJdbcTemplate().update("delete from user where id = ?", new Object[]{persona.getId()});
     }
 
 	@Override
@@ -62,7 +62,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
 
         	@Override
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement("insert into personas (nombre) values (?)", new String[] {"id"});
+                PreparedStatement ps = connection.prepareStatement("insert into user (name) values (?)", new String[] {"id"});
                 ps.setString(1, persona.getName());
                 return ps;                
             }
@@ -77,7 +77,7 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao{
         public Object mapRow(ResultSet resultSet, int i) throws SQLException {
             UserImpl persona = new UserImpl();
             persona.setId(resultSet.getInt("id"));
-            persona.setName(resultSet.getString("nombre"));
+            persona.setName(resultSet.getString("name"));
             return persona;
         }
     	
