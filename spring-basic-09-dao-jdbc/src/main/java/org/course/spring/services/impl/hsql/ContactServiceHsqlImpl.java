@@ -8,6 +8,6 @@ public class ContactServiceHsqlImpl extends ContactServiceBase {
 
 	@Override
     protected String getIdentidad(){
-        return "select last_insert_id()";
+        return "SELECT MAX(id) FROM contacts";
     }
 }
