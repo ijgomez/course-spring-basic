@@ -20,3 +20,4 @@ List of exercises and examples of course:
 - spring-basic-10-dao-jpa: Uso de JPA con Spring. Tratamiento de relaciones múltiples entre clases.
 - spring-basic-11-dao-hibernate: Uso Spring con Hibernate. Tratamiento de relaciones múltiples entre clases.
 - spring-basic-12-dao-hibernate-jpa: Uso de Spring con JPA empleando Hibernate como proveedor de persistencia. Tratamiento de realaciones múltiples entre clases.
+- spring-basic-13-iheritance: Uso de JPA con Spring. Tratamiento de jerarquías de herencia usando Hibernate. Toplink no parece soportar la estrategia de herencia "TABLE_PER_CLASS", mientras que hibernate s�. Ver los comentarios a la clase "Persona.java".
