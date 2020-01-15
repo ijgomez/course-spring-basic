@@ -22,3 +22,6 @@ List of exercises and examples of course:
 - spring-basic-12-dao-hibernate-jpa: Uso de Spring con JPA empleando Hibernate como proveedor de persistencia. Tratamiento de realaciones múltiples entre clases.
 - spring-basic-13-iheritance: Uso de JPA con Spring. Tratamiento de jerarquías de herencia usando Hibernate. Toplink no parece soportar la estrategia de herencia "TABLE_PER_CLASS", mientras que hibernate s�. Ver los comentarios a la clase "Persona.java".
 - spring-basic-14-roles:
+- spring-basic-15-aspects: Creación de aspectos, advice e introducciones.
+- spring-basic-16-aspects: Creación de anotaciones y su uso con aspectos.
+- spring-basic-17-aspects: Creación de anotaciones, uso con aspectos con persistencia integrada.

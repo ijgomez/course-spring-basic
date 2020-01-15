@@ -1,0 +1,8 @@
+public aspect AspectoSaludo {
+
+  pointcut metodoPrincipal() : execution(* main(..));
+
+  after() returning : metodoPrincipal() {
+    System.out.println("Mensaje de saludo");
+  }
+}
