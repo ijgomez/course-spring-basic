@@ -25,3 +25,8 @@ List of exercises and examples of course:
 - spring-basic-15-aspects: Creación de aspectos, advice e introducciones.
 - spring-basic-16-aspects: Creación de anotaciones y su uso con aspectos.
 - spring-basic-17-aspects: Creación de anotaciones, uso con aspectos con persistencia integrada.
+- spring-basic-18-mvc: Controladores básicos
+- spring-basic-19-mvc: Uso de Mapeadores
+- spring-basic-20-mvc: Configuración de log4j
+- spring-basic-21-mvc: Uso de un Multiaccióncontroller
+- spring-basic-22-mvc: Procesamiento de formularios con SimpleFormController
