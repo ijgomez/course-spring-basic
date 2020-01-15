@@ -18,4 +18,5 @@ List of exercises and examples of course:
 - spring-basic-08-dao-jdbc: Uso de Spring empleando JDBC como tecnolgía de acceso a datos
 - spring-basic-09-dao-jdbc: Uso de Spring empleando JDBC como tecnolgía de acceso a datos, pero empleando una estrategia de codificación menos común.
 - spring-basic-10-dao-jpa: Uso de JPA con Spring. Tratamiento de relaciones múltiples entre clases.
-- spring-basic-11-dao-hibernate: Uso Spring con Hibernate. Tratamiento de relaciones m�ltiples entre clases.
+- spring-basic-11-dao-hibernate: Uso Spring con Hibernate. Tratamiento de relaciones múltiples entre clases.
+- spring-basic-12-dao-hibernate-jpa: Uso de Spring con JPA empleando Hibernate como proveedor de persistencia. Tratamiento de realaciones múltiples entre clases.
