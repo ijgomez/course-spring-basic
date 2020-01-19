@@ -17,17 +17,57 @@
 	</properties>
 	<dependencyManagement>
 		<dependencies>
-			<!-- spring framework -->
+			<!-- basic spring dependencies -->
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
 				<version>${org.springframework.version}</version>
+			</dependency>
+			
+			<!-- Spring Persistence -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-tx</artifactId>
+			    <version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-orm</artifactId>
+			    <version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-jdbc</artifactId>
+			    <version>${org.springframework.version}</version>
+			</dependency>
+			
+			<!-- Spring MVC -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-web</artifactId>
+			    <version>${org.springframework.version}</version>
 			</dependency>
 			<dependency>
 			    <groupId>org.springframework</groupId>
 			    <artifactId>spring-webmvc</artifactId>
 			    <version>${org.springframework.version}</version>
 			</dependency>
+			
+			<!-- Spring Test -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-test</artifactId>
+			    <version>${org.springframework.version}</version>
+			    <scope>test</scope>
+			</dependency>
+			
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-aop</artifactId>
+			    <version>${org.springframework.version}</version>
+			</dependency>
+			
+			<!--  
 			<dependency>
 			    <groupId>org.springframework</groupId>
 			    <artifactId>spring-jdbc</artifactId>
@@ -43,11 +83,7 @@
 			    <artifactId>spring-aop</artifactId>
 			    <version>${org.springframework.version}</version>
 			</dependency>
-			<dependency>
-			    <groupId>org.springframework</groupId>
-			    <artifactId>spring-orm</artifactId>
-			    <version>${org.springframework.version}</version>
-			</dependency>
+			-->
 			
 			
 			<!-- aspectj -->
@@ -63,12 +99,13 @@
 			    <scope>runtime</scope>
 			</dependency>
 			
-			<!--  -->
+			<!--  
 			<dependency>
 			    <groupId>cglib</groupId>
 			    <artifactId>cglib</artifactId>
 			    <version>2.2.2</version>
 			</dependency>
+			-->
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>

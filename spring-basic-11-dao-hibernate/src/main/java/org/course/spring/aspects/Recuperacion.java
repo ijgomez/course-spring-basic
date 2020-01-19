@@ -2,17 +2,17 @@ package org.course.spring.aspects;
 
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
 
 @Aspect
 public class Recuperacion {
-    public Recuperacion() {
-    }
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(Recuperacion.class);
 
-    @AfterThrowing(pointcut = "execution(* *..ServicioPersona.getPersona(..))", 
-                   throwing = "ex")
+    @AfterThrowing(pointcut = "execution(* *..PersonService.read(..))",  throwing = "ex")
     public void realizarRecuperacion(DataAccessException ex) {
-        System.out.println("Ha ocurrido un error al acceder a datos:" + ex.getMessage());
+    	LOGGER.error("Ha ocurrido un error al acceder a datos: {}", ex);
     }
 }

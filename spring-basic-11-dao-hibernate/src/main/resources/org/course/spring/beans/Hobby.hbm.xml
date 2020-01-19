@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-lazy="false">
+	<class name="org.course.spring.beans.Hobby" table="hobbies">
+		<id name="id" column="id_hobby">
+			<generator class="identity" />
+		</id>
+		<property name="name" />
+		<many-to-one name="person" column="id_person" class="org.course.spring.beans.Person" />
+	</class>
+</hibernate-mapping>

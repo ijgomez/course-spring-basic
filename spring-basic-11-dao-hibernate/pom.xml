@@ -8,11 +8,22 @@
 		<version>1.0</version>
 	</parent>
 	<artifactId>spring-basic-11-dao-hibernate</artifactId>
+	<properties>
+
+		 <org.springframework.version>4.2.9.RELEASE</org.springframework.version>
+		 <org.aspectj.version>1.8.9</org.aspectj.version>
+
+		  <org.hibernate.version>3.6.10.Final</org.hibernate.version>
+	</properties>
 	<dependencies>
 		<!-- spring framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
 		</dependency>
 		<dependency>
 		    <groupId>org.springframework</groupId>
@@ -22,10 +33,7 @@
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-tx</artifactId>
 		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-aop</artifactId>
-		</dependency>
+		
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-orm</artifactId>
@@ -45,14 +53,11 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>3.6.10.Final</version>
+			<version>${org.hibernate.version}</version>
 		</dependency>
 		
 		<!--  -->
-		<dependency>
-		    <groupId>cglib</groupId>
-		    <artifactId>cglib</artifactId>
-		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -77,5 +82,15 @@
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 		</dependency>
+		
+		<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-test</artifactId>
+			</dependency>
+		<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				
+			</dependency>
 	</dependencies>
 </project>
