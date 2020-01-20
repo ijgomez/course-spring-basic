@@ -9,15 +9,15 @@ import org.springframework.dao.DataAccessException;
 
 public interface ClientService {
 	
-    void asignarContacto(Comercial comercial, Contact contacto) throws DataAccessException;
+    void associate(Comercial comercial, Contact contacto) throws DataAccessException;
 
-    List<Contact> getContactosDeUnComercial(Comercial comercial) throws DataAccessException;
+    List<Contact> findContactsBy(Comercial comercial) throws DataAccessException;
 
-    Collection<Comercial> getTodosLosComerciales() throws DataAccessException;
+    Collection<Comercial> findAllComercials() throws DataAccessException;
 
-    Collection<Contact> getTodosLosContactos() throws DataAccessException;
+    Collection<Contact> findAllContacts() throws DataAccessException;
 
-    Long insertarComercial(Comercial c) throws DataAccessException;
+    Long create(Comercial c) throws DataAccessException;
 
-    Long insertarContacto(Contact c) throws DataAccessException;    
+    Long create(Contact c) throws DataAccessException;    
 }

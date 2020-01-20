@@ -15,19 +15,15 @@ public class ContactDaoImpl implements ContactDao{
     @PersistenceContext
     private EntityManager em;
     
-    /** Creates a new instance of ContactDaoImpl */
-    public ContactDaoImpl() {
-    }
-    
     @SuppressWarnings("unchecked")
     @Override
-    public Collection<Contact> getTodosLosContactos() throws DataAccessException{
+    public Collection<Contact> findAll() throws DataAccessException {
         Query query = em.createQuery("select c from Contact as c");
         return query.getResultList();
     }
 
     @Override
-    public Long insertarContacto(Contact c) throws DataAccessException {
+    public Long create(Contact c) throws DataAccessException {
         em.persist(c);
         return c.getId();
     }

@@ -8,11 +8,11 @@ import org.springframework.dao.DataAccessException;
 
 public interface ComercialDao {
     
-	Collection<Comercial> getTodosLosComerciales() throws DataAccessException;
+	Collection<Comercial> findAll() throws DataAccessException;
     
-    Long insertarComercial(Comercial c) throws DataAccessException;
+    Long create(Comercial c) throws DataAccessException;
     
-    void asignarContacto(Comercial comercial, Contact contacto) throws DataAccessException;
+    void associate(Comercial comercial, Contact contacto) throws DataAccessException;
     
-    Comercial getComercial(Long id) throws DataAccessException;
+    Comercial read(Long id) throws DataAccessException;
 }

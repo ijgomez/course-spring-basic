@@ -19,6 +19,6 @@ import org.springframework.dao.DataAccessException;
  * @author user
  */
 public interface ContactDao {
-    Collection<Contact> getTodosLosContactos() throws DataAccessException;
-    Long insertarContacto(Contact c) throws DataAccessException;    
+    Collection<Contact> findAll() throws DataAccessException;
+    Long create(Contact c) throws DataAccessException;    
 }

@@ -83,14 +83,14 @@
 			<artifactId>hsqldb</artifactId>
 		</dependency>
 		
+		<!-- logging -->
 		<dependency>
-			    <groupId>org.springframework</groupId>
-			    <artifactId>spring-test</artifactId>
-			</dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		</dependency>
 		<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				
-			</dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
 	</dependencies>
 </project>
