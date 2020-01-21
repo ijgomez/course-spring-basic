@@ -93,7 +93,7 @@
 			<artifactId>hsqldb</artifactId>
 		</dependency>
 		
-		<!-- logging -->
+		<!-- testing -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-test</artifactId>
