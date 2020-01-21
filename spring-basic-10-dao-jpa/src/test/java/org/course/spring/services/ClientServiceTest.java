@@ -19,8 +19,6 @@ public class ClientServiceTest {
 
 	private static ApplicationContext ctx;
 
-	private ClientService clientService;
-
 	@BeforeClass
 	public static void beforeInitTesting() {
 		ctx = new ClassPathXmlApplicationContext(new String[] { "applicationContext.xml" });
@@ -40,6 +38,8 @@ public class ClientServiceTest {
         }
             
 	}
+	
+	private ClientService clientService;
 
 	@Before
 	public void beforeTest() {
