@@ -9,8 +9,10 @@
 	</parent>
 	<artifactId>spring-basic-12-dao-hibernate-jpa</artifactId>
 	<properties>
-		 <org.springframework.version>4.2.9.RELEASE</org.springframework.version>
-		 <org.aspectj.version>1.8.9</org.aspectj.version>
+		<!-- Framework version -->
+		<org.springframework.version>4.2.9.RELEASE</org.springframework.version>
+		<org.aspectj.version>1.8.9</org.aspectj.version>
+		<org.hibernate.version>3.6.10.Final</org.hibernate.version>
 	</properties>
 	<dependencies>
 		<!-- spring framework -->
@@ -49,25 +51,25 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>3.6.10.Final</version>
+			<version>${org.hibernate.version}</version>
 		</dependency>
 		<dependency>
-			    <groupId>org.hibernate</groupId>
-			    <artifactId>hibernate-validator</artifactId>
-			    <version>3.1.0.GA</version>
-			</dependency>
-			<dependency>
-				<groupId>javassist</groupId>
-				<artifactId>javassist</artifactId>
-				<version>3.12.1.GA</version>
-			</dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${org.hibernate.version}</version>
+		</dependency>
 		<dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-entitymanager</artifactId>
-    <version>3.6.10.Final</version>
-</dependency>
-
-		<!--  -->
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>3.1.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.12.1.GA</version>
+		</dependency>
+		
+		<!-- various  -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -77,13 +79,13 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 		
-		<!-- logging dependencies -->
+		<!-- logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 		</dependency>
 		
-		<!-- database dependencies -->
+		<!-- database -->
 		<dependency>
 		    <groupId>commons-dbcp</groupId>
 		    <artifactId>commons-dbcp</artifactId>
