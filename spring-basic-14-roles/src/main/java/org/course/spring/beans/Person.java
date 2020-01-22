@@ -6,26 +6,29 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import lombok.Getter;
-import lombok.Setter;
+public abstract class Person implements Serializable {
 
-@Getter
-@Setter
-public class Rol implements Serializable {
-
-	private static final long serialVersionUID = 2618837047637442892L;
+	private static final long serialVersionUID = -6080757354086615828L;
 	
 	private String name;
 
-    public Rol() {
+    public Person() {
     	
     }
 
-    public Rol(String name) {
-        this.name = name;
+    public Person(String name) {
+        this.setName(name);
     }
 
-    @Override
+    public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this, false);
     }

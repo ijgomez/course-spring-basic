@@ -2,13 +2,17 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-    <bean id="rol1" class="beans.Rol" p:nombre="Rol 1"/>
-    <bean id="rol2" class="beans.Rol" p:nombre="Rol 2"/>
-    <bean id="rol3" class="beans.Rol" p:nombre="Rol 3"/>
-    <bean id="perfil" class="beans.Perfil"/>
-    <bean id="persona" class="beans.Persona" abstract="true" p:nombre="Una persona"/>
-    <bean id="usuario" parent="persona" class="beans.Usuario" p:clave="Una Clave" p:perfil-ref="perfil">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+    
+    <bean id="rol1" class="org.course.spring.beans.Rol" p:name="Rol 1"/>
+    <bean id="rol2" class="org.course.spring.beans.Rol" p:name="Rol 2"/>
+    <bean id="rol3" class="org.course.spring.beans.Rol" p:name="Rol 3"/>
+    
+    <bean id="profile" class="org.course.spring.beans.Profile"/>
+    
+    <bean id="person" class="org.course.spring.beans.Person" abstract="true" p:name="One person"/>
+    
+    <bean id="user" parent="person" class="org.course.spring.beans.User" p:password="Una Clave" p:profiles-ref="profile">
         <property name="roles">
             <list>
                 <ref bean="rol1"/>

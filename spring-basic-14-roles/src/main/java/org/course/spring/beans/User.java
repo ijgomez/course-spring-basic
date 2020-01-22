@@ -1,6 +1,6 @@
 package org.course.spring.beans;
 
-import java.io.Serializable;
+import java.util.List;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -11,18 +11,23 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Rol implements Serializable {
+public class User extends Person {
 
-	private static final long serialVersionUID = 2618837047637442892L;
-	
-	private String name;
+	private static final long serialVersionUID = -8605874580760664910L;
 
-    public Rol() {
+	private String password;
+    
+    private List<Rol> roles;
+    
+    private Profile profiles;
+
+    public User() {
     	
     }
 
-    public Rol(String name) {
-        this.name = name;
+    public User(String name, String password) {
+        super(name);
+        this.password = password;
     }
 
     @Override

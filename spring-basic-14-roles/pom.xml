@@ -8,22 +8,41 @@
 		<version>1.0</version>
 	</parent>
 	<artifactId>spring-basic-14-roles</artifactId>
+	<properties>
+		 <org.springframework.version>4.2.9.RELEASE</org.springframework.version>
+		 
+		 
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 		</dependency>
+		
+		<!-- various  -->
 		<dependency>
-		    <groupId>cglib</groupId>
-		    <artifactId>cglib</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+		</dependency>
+		
+		<!-- logging dependencies -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+		
+		<!-- testing -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 		</dependency>
 	</dependencies>
 </project>
