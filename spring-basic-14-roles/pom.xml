@@ -9,11 +9,13 @@
 	</parent>
 	<artifactId>spring-basic-14-roles</artifactId>
 	<properties>
+		<!-- Framework version -->
 		 <org.springframework.version>4.2.9.RELEASE</org.springframework.version>
 		 
 		 
 	</properties>
 	<dependencies>
+		<!-- spring framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -29,7 +31,7 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 		
-		<!-- logging dependencies -->
+		<!-- logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>

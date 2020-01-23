@@ -1,10 +1,13 @@
 package org.course.spring.aspects;
 
-public class EjemploIntroduccionImpl implements EjemploIntroduccion {
-    public EjemploIntroduccionImpl() {
-    }
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+public class EjemploIntroduccionImpl implements EjemploIntroduccion {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(EjemploIntroduccionImpl.class);
+	
     public void mensaje() {
-        System.out.println("Mensaje del objeto introducido");
+    	LOGGER.info("Mensaje del objeto introducido");
     }
 }

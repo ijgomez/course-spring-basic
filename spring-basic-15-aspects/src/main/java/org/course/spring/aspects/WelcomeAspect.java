@@ -1,8 +1,5 @@
 package org.course.spring.aspects;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -11,46 +8,49 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StopWatch;
 
 
 @Aspect
-public class AspectoSaludo {
-    private Log log = LogFactory.getLog(this.getClass());
+public class WelcomeAspect {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(WelcomeAspect.class);
 
     @Pointcut("execution(* principalAfter(..))")
     public void metodoAfter() {
+    	
     }
 
     @After("metodoAfter()")
     public void saludoAfter() {
-        System.out.println("Mensaje de saludo after");
+        LOGGER.info("Mensaje de saludo after");
     }
 
     @Pointcut("execution(public * *(..))")
-    public void metodoAfterThrowing() {
+    public void metodoAfterThrowing() 
+    {
     }
 
     @AfterThrowing(pointcut = "metodoAfterThrowing()", throwing = "ex")
     public void logExcepcion(Exception ex) {
-        log.info("Ha ocurrido un error: " + ex.getMessage());
+    	LOGGER.error("Ha ocurrido un error: {}", ex.getMessage());
     }
 
-    @AfterReturning(pointcut = "execution(* principalAfterReturning(..))", 
-                    returning = "valor")
-    public void saludoAfterReturning(Long valor) {
-        System.out.println("Mensaje de saludo after returning");
-        System.out.println("Valor devuelto: " + valor);
+    @AfterReturning(pointcut = "execution(* principalAfterReturning(..))", returning = "value")
+    public void saludoAfterReturning(Long value) {
+    	LOGGER.info("Mensaje de saludo after returning");
+    	LOGGER.info("Valor devuelto: " + value);
     }
 
-    @Pointcut("execution(public void springaspectos0001.basico.ServicioSaludo.*Before())")
+    @Pointcut("execution(public void org.course.spring.services.WelcomeService.*Before())")
     public void metodoBefore() {
     }
 
     @Before("metodoBefore()")
     public void saludoBefore() {
-        System.out.println("Mensaje de saludo before");
+    	LOGGER.info("Mensaje de saludo before");
     }
 
     @Pointcut("execution(* *Before(..)) && args(unInteger)")
@@ -59,18 +59,18 @@ public class AspectoSaludo {
 
     @Before("metodoBeforeConParametro(unInteger)")
     public void saludoBeforeConParametro(Integer unInteger) {
-        System.out.println("Mensaje de saludo before con un par�metro que vale " + unInteger);
+    	LOGGER.info("Mensaje de saludo before con un parámetro que vale " + unInteger);
     }
     
     @Around("execution(* metodoLento(..))")
     public Object calcularTiempo(ProceedingJoinPoint pjp) throws Throwable {
-        StopWatch clock = new StopWatch("Calculando tiempo de ejecuci�n...");
+        StopWatch clock = new StopWatch("Calculando tiempo de ejecución...");
         try {
             clock.start(pjp.toShortString());
             return pjp.proceed();
         } finally {
             clock.stop();
-            System.out.println(clock.prettyPrint());
+            LOGGER.info(clock.prettyPrint());
         }
     }
 }
