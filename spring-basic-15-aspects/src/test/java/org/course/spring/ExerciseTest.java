@@ -1,6 +1,6 @@
 package org.course.spring;
 
-import org.course.spring.aspects.EjemploIntroduccion;
+import org.course.spring.aspects.Introduccion;
 import org.course.spring.beans.Person;
 import org.course.spring.services.WelcomeService;
 import org.junit.Before;
@@ -64,7 +64,7 @@ public class ExerciseTest {
 	public void testEjecucionAspectoIntroduccion() {
         Person persona = (Person) ctx.getBean("person");
         persona.setName("Un nombre");
-        EjemploIntroduccion ejemploIntroduccion = (EjemploIntroduccion) ctx.getBean("person");
+        Introduccion ejemploIntroduccion = (Introduccion) ctx.getBean("person");
         ejemploIntroduccion.mensaje();
     }
 
