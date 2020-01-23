@@ -1,40 +1,24 @@
-/*
- * CuentaImpl.java
- *
- * Created on 27-sep-2007, 12:04:27
- *
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.course.spring.beans;
 
 import java.io.Serializable;
 
-/**
- *
- * @author user
- */
-public class CuentaImpl implements Serializable, Cuenta {
+public class AccountImpl implements Serializable, Account {
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = -2898384848169327835L;
 
-	public Cliente getCliente() {
+	public Client getClient() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public Double getSaldo() {
+    public Double getAmount() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public void ingresar(Double importe) {
+    public void ingresar(Double amount) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public Double reintegrar(Double importe) {
+    public Double reintegrar(Double amount) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
