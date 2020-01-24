@@ -7,7 +7,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>springservlet</servlet-name>
-        <url-pattern>*.curso</url-pattern>
+        <url-pattern>*.course</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

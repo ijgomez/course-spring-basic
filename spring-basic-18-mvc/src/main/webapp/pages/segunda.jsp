@@ -10,6 +10,6 @@
         <title>JSP Page</title>
     </head>
     <body>        
-        <h1>Segunda página controlada por Spring. Ejemplo SpringWeb0001</h1>
+        <h1>Segunda página controlada por Spring. Ejemplo spring-basic-18-mvc</h1>
     </body>
 </html>
