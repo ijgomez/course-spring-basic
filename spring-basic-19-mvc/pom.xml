@@ -9,6 +9,12 @@
 	</parent>
 	<artifactId>spring-basic-19-mvc</artifactId>
 	<packaging>war</packaging>
+	<properties>
+		<!-- Framework version -->
+		 <org.springframework.version>4.2.9.RELEASE</org.springframework.version>
+		 <org.aspectj.version>1.8.9</org.aspectj.version>
+		 
+	</properties>
 	<dependencies>
 		<!-- spring framework -->
 		<dependency>
@@ -31,6 +37,16 @@
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-orm</artifactId>
 		</dependency>
+		
+		<!-- Spring MVC -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
+		</dependency>
 
 		<!-- aspectj -->
 		<dependency>
@@ -51,16 +67,25 @@
 		
 		<!--  -->
 		<dependency>
-		    <groupId>cglib</groupId>
-		    <artifactId>cglib</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+		</dependency>
+		
+		<!-- servlet-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>servlet-api</artifactId>
+		    <version>2.5</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
 		</dependency>
 		
 		<!-- logging dependencies -->

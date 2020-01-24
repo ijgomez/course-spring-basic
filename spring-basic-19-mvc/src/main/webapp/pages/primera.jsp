@@ -13,10 +13,10 @@
     </head>
     <body>
         
-        <h1>Primera página controlada por Spring. Ejemplo SpringWeb0002</h1>
+        <h1>Primera página controlada por Spring. Ejemplo spring-basic-19-mvc</h1>
         
         La fecha de hoy es: <strong>${fecha}</strong>
         <br>
-        <a href="segunda.curso">Pinche aquí</a>
+        <a href="segunda.course">Pinche aquí</a>
     </body>
 </html>

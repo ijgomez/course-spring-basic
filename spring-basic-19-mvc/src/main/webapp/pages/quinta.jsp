@@ -11,8 +11,8 @@
     </head>
     <body>
         
-        <h1>Quinta página controlada por Spring. Ejemplo SpringWeb0002</h1>
+        <h1>Quinta página controlada por Spring. Ejemplo spring-basic-19-mvc</h1>
         <h2>Esta página aparece en lugar de la cuarta porque la request ha sido <i>interceptada</i>.</h2>
-        <a href="primera.curso">Pinche Aquí</a>
+        <a href="primera.course">Pinche Aquí</a>
     </body>
 </html>

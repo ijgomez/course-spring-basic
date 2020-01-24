@@ -2,23 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
-       http://www.springframework.org/schema/beans 
-       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass"
-                  value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/paginas/"/>
+       		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    ">
+    
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-    <bean id="primerControlador" class="controladores.PrimerControlador"/>
-    <bean id="segundoControlador" class="controladores.SegundoControlador"/>
-    <bean id="tercerControlador" class="controladores.TercerControlador"/>
-    <bean id="cuartoControlador" class="controladores.CuartoControlador"/>
-    <bean id="quintoControlador" class="controladores.QuintoControlador"/>
-    <bean id="primerInterceptor" class="interceptors.PrimerInterceptor"/>
-    <bean id="segundoInterceptor" class="interceptors.SegundoInterceptor"/>
-    <bean id="tercerInterceptor" class="interceptors.TercerInterceptor"/>
+    
+    <bean id="primerController"  class="org.course.spring.controllers.PrimerController"/>
+    <bean id="segundoController" class="org.course.spring.controllers.SegundoController"/>
+    <bean id="tercerController"  class="org.course.spring.controllers.TercerController"/>
+    <bean id="cuartoController"  class="org.course.spring.controllers.CuartoController"/>
+    <bean id="quintoController"  class="org.course.spring.controllers.QuintoController"/>
+    
+    <bean id="primerInterceptor" class="org.course.spring.interceptors.PrimerInterceptor"/>
+    <bean id="segundoInterceptor" class="org.course.spring.interceptors.SegundoInterceptor"/>
+    <bean id="tercerInterceptor" class="org.course.spring.interceptors.TercerInterceptor"/>
+    
     <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="interceptors">
             <list>
@@ -29,8 +31,8 @@
         </property>
         <property name="urlMap">
             <map>
-                <entry key="/primera.curso" value-ref="primerControlador"/>
-                <entry key="/segunda.curso" value-ref="segundoControlador"/>
+                <entry key="/primera.course" value-ref="primerController"/>
+                <entry key="/segunda.course" value-ref="segundoController"/>
             </map>
         </property>
         <property name="mappings">
@@ -39,4 +41,5 @@
             </bean>
         </property>
     </bean>
+    
 </beans>

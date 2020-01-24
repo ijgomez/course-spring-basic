@@ -11,7 +11,7 @@
     </head>
     <body>
         
-        <h1>Tercera página controlada por Spring. Ejemplo SpringWeb0002</h1>
-        <a href="cuarta.curso">Pinche Aquí</a>
+        <h1>Segunda página controlada por Spring. Ejemplo spring-basic-19-mvc</h1>
+        <a href="tercera.course">Pinche Aquí</a>
     </body>
 </html>
