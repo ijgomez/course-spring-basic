@@ -5,20 +5,17 @@ import java.lang.reflect.Method;
 
 import org.course.spring.annotations.Version;
 import org.course.spring.beans.User;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Main {
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
-	
-	public static void main(String[] args) {
-		buscarAnotacionesEnLaClasePersona();
-        buscarAnotacionesEnLosMetodosDeLaClasePersona();
-	}
-	
-	private static void buscarAnotacionesEnLaClasePersona() {
-        LOGGER.info("Buscando anotaciones en la clase " + User.class.getName());
+public class ExerciseTest {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(ExerciseTest.class);
+
+	@Test
+	public void testBuscarAnotacionesEnLaClasePersona() throws Exception  {
+		LOGGER.info("Buscando anotaciones en la clase " + User.class.getName());
         for (Annotation anotacion : User.class.getAnnotations()) {
             LOGGER.info("Encontrada la siguiente anotación: " + anotacion);
         }
@@ -32,9 +29,10 @@ public class Main {
             LOGGER.info(f2, User.class.getSimpleName(), v.numero());
         }
     }
-
-    private static void buscarAnotacionesEnLosMetodosDeLaClasePersona() {
-        Method[] metodos = User.class.getMethods();
+	
+	@Test
+	public void testBuscarAnotacionesEnLosMetodosDeLaClasePersona() throws Exception  {
+		Method[] metodos = User.class.getMethods();
         for (Method metodo : metodos) {
             Annotation[] a = metodo.getAnnotations();
             if (a.length == 0) {

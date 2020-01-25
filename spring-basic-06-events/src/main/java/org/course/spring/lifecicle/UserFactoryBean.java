@@ -5,9 +5,9 @@ import org.springframework.beans.factory.ObjectFactory;
 
 public class UserFactoryBean {
 
-    private ObjectFactory factory;
+    private ObjectFactory<User> factory;
 
-    public void setFactory(ObjectFactory factory) {
+    public void setFactory(ObjectFactory<User> factory) {
         this.factory = factory;
     }
     

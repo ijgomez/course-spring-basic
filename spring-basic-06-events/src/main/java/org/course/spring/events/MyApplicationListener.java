@@ -5,13 +5,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 
-public class MyApplicationListener implements ApplicationListener{
+public class MyApplicationListener implements ApplicationListener<ApplicationEvent> {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(MyApplicationListener.class);
-	
+
 	@Override
-    public void onApplicationEvent(ApplicationEvent applicationEvent) {
+	public void onApplicationEvent(ApplicationEvent applicationEvent) {
 		LOGGER.info("Capturado el evento " + applicationEvent.getClass().getName());
-    }
-    
+	}
+
 }
