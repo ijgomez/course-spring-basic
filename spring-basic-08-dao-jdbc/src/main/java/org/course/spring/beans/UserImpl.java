@@ -30,7 +30,8 @@ public class UserImpl implements User, Serializable {
 	public Integer getId() {
 		return this.id;
 	}
-	
+
+	@Override
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -39,7 +40,8 @@ public class UserImpl implements User, Serializable {
 	public String getName() {
 		return this.name;
 	}
-	
+
+	@Override
 	public void setName(String name) {
 		this.name = name;
 	}

@@ -8,20 +8,20 @@ import org.springframework.dao.DataAccessException;
 
 public interface UserDao {
 	
-	void insertarUser(User user) throws DataAccessException, UserException;
+	void create(User user) throws DataAccessException, UserException;
 
-	void actualizarUser(User user) throws DataAccessException;
+	void update(User user) throws DataAccessException;
 
-	void borrarUser(User user) throws DataAccessException;
+	void delete(User user) throws DataAccessException;
 
-	Integer contarUsers() throws DataAccessException;
+	Integer countAll() throws DataAccessException;
 
-	Integer contarUsersUsandoParametros(String name) throws DataAccessException;
+	Integer countByName(String name) throws DataAccessException;
 
-	User encontrarUser(Integer id) throws DataAccessException;
+	User read(Integer id) throws DataAccessException;
 
-	Collection<User> encontrarTodos() throws DataAccessException;
+	Collection<User> findAll() throws DataAccessException;
 
-	Integer insertarUserDevolviendoLaClavePrimaria(User user) throws DataAccessException;
+	Integer createByObject(User user) throws DataAccessException;
 	
 }

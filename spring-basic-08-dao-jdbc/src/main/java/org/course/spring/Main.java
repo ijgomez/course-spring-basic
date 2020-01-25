@@ -38,28 +38,28 @@ public class Main {
         UserDao personaDao = (UserDao) ctx.getBean("personaDao");
         LOGGER.info("Insertando algunas personas en la base de datos...");
         for(int i = 0; i < MAX_PERSONAS; i++){
-            personaDao.insertarUser(new UserImpl(i,"nombre"+i));
+            personaDao.create(new UserImpl(i,"nombre"+i));
         }
-        LOGGER.info("Se han encontrado {} personas en la base de datos",personaDao.contarUsers());
-        LOGGER.info("Se han encontrado {} personas en la base de datos cuyo nombre empieza por {}",personaDao.contarUsersUsandoParametros("n"),"n");
+        LOGGER.info("Se han encontrado {} personas en la base de datos",personaDao.countAll());
+        LOGGER.info("Se han encontrado {} personas en la base de datos cuyo nombre empieza por {}",personaDao.countByName("n"),"n");
         final Integer id = 3;
         LOGGER.info("Buscando una persona con Id = " + id);
         User p;
         try {
-            p = personaDao.encontrarUser(id);
+            p = personaDao.read(id);
             LOGGER.info("Id %d. Nombre %s\n",p.getId(),p.getName());
         } catch (DataAccessException ex) {
             LOGGER.info("No se ha encontrado a nadie con el identificador " + id);
         }
         try {
-            personaDao.actualizarUser(new UserImpl(id,"Nuevo nombre") );
-            personaDao.borrarUser(new UserImpl(id + 1,"Da igual") );
+            personaDao.update(new UserImpl(id,"Nuevo nombre") );
+            personaDao.delete(new UserImpl(id + 1,"Da igual") );
         } catch (DataAccessException ex) {
             LOGGER.info("Ha ocurrido un error: " + ex.getMessage());
         }
         LOGGER.info("Lista de todas las personas en la base de datos");
         try {
-            Collection<User> todos = personaDao.encontrarTodos();
+            Collection<User> todos = personaDao.findAll();
             LOGGER.info("Se han encontrado {} persona(s) en la base de datos\n",todos.size());
             for (User persona : todos) {
                 LOGGER.info("Id {}. Nombre {}",persona.getId(),persona.getName());
@@ -72,7 +72,7 @@ public class Main {
     private static void ejecutarInsercionDevolviendoLaClavePrimaria() {
         UserDao personaDao = (UserDao) ctx.getBean("personaDao");
         try {
-            Integer clave = personaDao.insertarUserDevolviendoLaClavePrimaria(new UserImpl(null,"Clave primaria"));
+            Integer clave = personaDao.createByObject(new UserImpl(null,"Clave primaria"));
             LOGGER.info("La clave primaria es " + clave);
         } catch (DataAccessException ex) {
             LOGGER.info("Ha ocurrido un error: " + ex.getMessage());
