@@ -5,13 +5,23 @@
        		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
     ">
     
- 	<!--Un "View Resolver". Le indicamos a Spring dónde encontrar nuestras páginas físicas-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
     
- 	<!--Declaraciones de los beans escritos por nosotros-->
-    <bean name="delegadoMultiAccion" class="org.course.spring.controllers.DelegadoMultiAccion"/>
+    <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    
+    <bean name="/entrada.do" class="org.course.spring.controllers.EntradaController"/>
+    
+    <bean name="siguienteController" class="org.course.spring.controllers.SiguienteController"/>
+    
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="/siguiente.do" value-ref="siguienteController"/>
+            </map>
+        </property>
+    </bean>
 </beans>
