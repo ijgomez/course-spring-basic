@@ -10,9 +10,9 @@ import org.springframework.dao.DataAccessException;
 
 public interface ContactService extends Serializable {
 	
-    List<Contact> getContactos() throws DataAccessException;
+    List<Contact> findAll() throws DataAccessException;
     
-    void insertarContacto(Contact c) throws DataAccessException;
+    void create(Contact contact) throws DataAccessException;
     
-    void actualizarContacto(Contact c) throws DataAccessException;
+    void update(Contact contact) throws DataAccessException;
 }

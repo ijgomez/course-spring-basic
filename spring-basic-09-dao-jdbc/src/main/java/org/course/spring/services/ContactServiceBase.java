@@ -39,8 +39,7 @@ public abstract class ContactServiceBase extends JdbcDaoSupport implements Conta
         actualizarContacto = new ActualizarContacto(getDataSource());
     }
 
-    @SuppressWarnings("unchecked")
-    public List<Contact> getContactos() throws DataAccessException {
+    public List<Contact> findAll() throws DataAccessException {
         synchronized (this.contacts) {
             LOGGER.info("Cargando los contactos de la base de datos");
             contacts.clear();
@@ -50,16 +49,16 @@ public abstract class ContactServiceBase extends JdbcDaoSupport implements Conta
     }
 
     @Override
-    public void insertarContacto(Contact c) throws DataAccessException {
+    public void create(Contact c) throws DataAccessException {
         nuevoContacto.insert(c);
     }
 
     @Override
-    public void actualizarContacto(Contact c) throws DataAccessException {
+    public void update(Contact c) throws DataAccessException {
         actualizarContacto.update(c);
     }
 
-    protected class ConsultaContactos extends MappingSqlQuery {
+    protected class ConsultaContactos extends MappingSqlQuery<Contact> {
         protected ConsultaContactos(DataSource ds, String sql) {
             super(ds, sql);
         }
@@ -69,7 +68,7 @@ public abstract class ContactServiceBase extends JdbcDaoSupport implements Conta
             compile();
         }
 
-        protected Object mapRow(ResultSet rs, int rownum) throws SQLException {
+        protected Contact mapRow(ResultSet rs, int rownum) throws SQLException {
             Contact contacto = new ContactImpl();
             contacto.setId(new Integer(rs.getInt("id")));
             contacto.setNombre(rs.getString("name"));
@@ -94,7 +93,7 @@ public abstract class ContactServiceBase extends JdbcDaoSupport implements Conta
         }
 
         private void obtenerId(Contact contacto) {
-            contacto.setId(getJdbcTemplate().queryForInt(getIdentidad()));
+            contacto.setId(getJdbcTemplate().queryForObject(getIdentidad(), Integer.class));
         }
 
     }

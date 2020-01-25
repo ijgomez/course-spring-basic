@@ -5,9 +5,9 @@
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="
-       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
-       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd 
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd"
 	>
 
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -28,20 +28,20 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<bean id="servicioContactos" class="org.course.spring.services.impl.hsql.ContactServiceHsqlImpl">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-
 	<aop:config>
 		<aop:advisor pointcut="execution(* *..ContactService.*(..))" advice-ref="txAdvice" />
 	</aop:config>
 
 	<tx:advice id="txAdvice">
 		<tx:attributes>
-			<tx:method name="insertar*" />
-			<tx:method name="actualizar*" />
-			<tx:method name="borrar*" />
+			<tx:method name="create*" />
+			<tx:method name="update*" />
+			<tx:method name="delete*" />
 			<tx:method name="*" read-only="true" />
 		</tx:attributes>
 	</tx:advice>
+	
+	<bean id="contactService" class="org.course.spring.services.impl.hsql.ContactServiceHsqlImpl">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 </beans>

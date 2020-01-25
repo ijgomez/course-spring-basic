@@ -8,6 +8,12 @@
 		<version>1.0</version>
 	</parent>
 	<artifactId>spring-basic-09-dao-jdbc</artifactId>
+	<properties>
+		<!-- Framework version -->
+		<org.springframework.version>4.2.9.RELEASE</org.springframework.version>
+		<org.aspectj.version>1.8.9</org.aspectj.version>
+
+	</properties>
 	<dependencies>
 		<!-- spring framework -->
 		<dependency>
@@ -37,17 +43,13 @@
 		    <artifactId>aspectjweaver</artifactId>
 		</dependency>
 		
-		<!--  -->
-		<dependency>
-		    <groupId>cglib</groupId>
-		    <artifactId>cglib</artifactId>
-		</dependency>
+		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
 		
-		<!-- logging dependencies -->
+		<!-- logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -63,11 +65,14 @@
 			<artifactId>hsqldb</artifactId>
 		</dependency>
 		
-		<!-- Testing dependencies -->
+		<!-- testing -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
 		</dependency>
 		
 	</dependencies>
