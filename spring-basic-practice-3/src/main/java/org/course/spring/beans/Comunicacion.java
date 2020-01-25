@@ -1,34 +1,28 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.course.spring.beans;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Administrador
- */
-public class Comunicacion implements Serializable{
+import lombok.Getter;
+import lombok.Setter;
 
-    private String tipo;
+@Getter
+@Setter
+public class Comunicacion implements Serializable {
 
-    public Comunicacion() {
-    }
+	private static final long serialVersionUID = 6834947743570539923L;
+	
+	private String tipo;
 
-    public String getTipo() {
-        return tipo;
-    }
+	/**
+	 * New Instance
+	 */
+	public Comunicacion() {
+		
+	}
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-    
-    public boolean comunicar(String mensaje){
-        System.out.println("Establecer comunicacion original.");
-        return false;
-    }
-    
+	public boolean comunicar(String mensaje) {
+		System.out.println("Establecer comunicacion original.");
+		return false;
+	}
+
 }

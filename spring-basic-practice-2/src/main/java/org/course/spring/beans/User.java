@@ -1,10 +1,7 @@
 package org.course.spring.beans;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.List;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -13,23 +10,20 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
-public class Rol implements Serializable {
+public class User implements Serializable {
 
-	private static final long serialVersionUID = -5543054613684658887L;
+	private static final long serialVersionUID = 8753748940581266366L;
 
-	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+	private Long id;
     
-    private String name;
+    private List<Rol> roles;
 
     /**
      * New Instance
      */
-    public Rol() {
+    public User() {
     	
     }
 

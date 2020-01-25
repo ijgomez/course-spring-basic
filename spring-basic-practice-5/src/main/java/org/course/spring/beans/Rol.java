@@ -1,36 +1,24 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.course.spring.beans;
 
 import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- *
- * @author Administrador
- */
+import lombok.Data;
+
 @Entity
+@Data
 public class Rol implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    
-    private String rol;
+	private static final long serialVersionUID = 538882693035597996L;
 
-    public Rol() {
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    public String getRol() {
-        return rol;
-    }
+	private String name;
 
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
 }

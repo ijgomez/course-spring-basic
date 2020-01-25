@@ -6,8 +6,8 @@
 package org.course.spring;
 
 import org.course.spring.beans.Rol;
-import org.course.spring.beans.Usuario;
-import org.course.spring.services.UsuarioService;
+import org.course.spring.beans.User;
+import org.course.spring.services.UserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -36,29 +36,29 @@ private ClassPathXmlApplicationContext ctx;
     
     public void execute(){
         System.out.println("Obteniendo Servicio");
-        UsuarioService userServ = (UsuarioService)ctx.getBean("usuarioService");
+        UserService userServ = (UserService)ctx.getBean("usuarioService");
         
-        Usuario usuario = new Usuario();
-        usuario.setNombre("Usuario1");
+        User usuario = new User();
+        usuario.setName("Usuario1");
         
         Rol rol1 = new Rol();
-        rol1.setRol("Admin");
-        usuario.getLista().add(rol1);
+        rol1.setName("Admin");
+        usuario.getRoles().add(rol1);
         
         Rol rol2 = new Rol();
-        rol2.setRol("Consulta");
-        usuario.getLista().add(rol2);
+        rol2.setName("Consulta");
+        usuario.getRoles().add(rol2);
         
         
-        userServ.addUsuario(usuario);
+        userServ.create(usuario);
         
         
     }
     
     public void listar(){
-        UsuarioService userServ = (UsuarioService)ctx.getBean("usuarioService");
+        UserService userServ = (UserService)ctx.getBean("usuarioService");
         
-        for (Usuario u :userServ.getListaUsuarios()){
+        for (User u :userServ.findAll()){
             System.out.println(u.toString());
         }
     }

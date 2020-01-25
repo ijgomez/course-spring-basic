@@ -1,10 +1,15 @@
 package org.course.spring.beans;
 
 import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -16,9 +21,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Rol implements Serializable {
+public class User implements Serializable {
 
-	private static final long serialVersionUID = -5543054613684658887L;
+	private static final long serialVersionUID = 2551694873088202909L;
 
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -26,10 +31,13 @@ public class Rol implements Serializable {
     
     private String name;
 
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private List<Rol> roles;
+
     /**
      * New Instance
      */
-    public Rol() {
+    public User() {
     	
     }
 
@@ -47,4 +55,5 @@ public class Rol implements Serializable {
     public String toString() {
     	return ToStringBuilder.reflectionToString(this);
     }
+    
 }
