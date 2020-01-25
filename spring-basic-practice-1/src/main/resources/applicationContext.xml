@@ -2,8 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-    <bean id="usuario" class="beans.Usuario">
-        <property name="lista">
+    
+    <bean id="user" class="org.course.spring.beans.User">
+        <property name="roles">
             <list>
                 <ref bean="rol1" />
                 <ref bean="rol2" />
@@ -11,14 +12,14 @@
             </list>
         </property>
     </bean>
-    <bean id="rol1" class="beans.Rol">
-        <property name="rol" value="Administrador"/>
+    <bean id="rol1" class="org.course.spring.beans.Rol">
+        <property name="name" value="Administrador"/>
     </bean>
-    <bean id="rol2" class="beans.Rol">
-        <property name="rol" value="Consulta"/>
+    <bean id="rol2" class="org.course.spring.beans.Rol">
+        <property name="name" value="Consulta"/>
     </bean>
-    <bean id="rol3" class="beans.Rol">
-        <property name="rol" value="Operador"/>
+    <bean id="rol3" class="org.course.spring.beans.Rol">
+        <property name="name" value="Operador"/>
     </bean>
 </beans>
     
