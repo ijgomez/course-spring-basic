@@ -1,8 +1,10 @@
-package springweb0005.beans;
+package org.course.spring.beans;
 
 public class LoginImpl implements Login {
-    private String nombre;
-    private String clave;
+    
+	private String nombre;
+    
+	private String clave;
 
     public LoginImpl() {
     }

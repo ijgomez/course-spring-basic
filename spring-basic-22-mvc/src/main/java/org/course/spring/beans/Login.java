@@ -1,7 +1,8 @@
-package springweb0005.beans;
+package org.course.spring.beans;
 
 public interface Login {
-    public String getNombre();
+    
+	public String getNombre();
 
     public void setNombre(String nombre);
 
