@@ -8,25 +8,25 @@ Source code of the course over Spring framework 2.5 (taught in 2008) in 32 hours
 
 List of exercises and examples of course:
 
-- spring-basic-01-minimal: Mínima aplicación en Spring.
-- spring-basic-02-IoC: Configuración de propiedades simples mediante inyección de dependencias
-- spring-basic-03-IoC: Instanciación simple de beans y creación de colaboraciones mediante inyección de dependencias
-- spring-basic-04-IoC: Otras formas de instanciación e inyección
-- spring-basic-05-wiring: Wiring y Reemplazos
-- spring-basic-06-events: Ciclo de vida, eventos y postprocesadores
+- spring-basic-01-minimal: Minimum application in Spring.
+- spring-basic-02-IoC: Configuration of simple properties by dependency injection.
+- spring-basic-03-IoC: Simple bean instantiation and collaboration creation through dependency injection.
+- spring-basic-04-IoC: Other forms of instantiation and injection.
+- spring-basic-05-wiring: Wiring and Replacements.
+- spring-basic-06-events: Life cycle, events and postprocessors.
 - spring-basic-07-annotations:
-- spring-basic-08-dao-jdbc: Uso de Spring empleando JDBC como tecnolgía de acceso a datos
-- spring-basic-09-dao-jdbc: Uso de Spring empleando JDBC como tecnolgía de acceso a datos, pero empleando una estrategia de codificación menos común.
-- spring-basic-10-dao-jpa: Uso de JPA con Spring. Tratamiento de relaciones múltiples entre clases.
-- spring-basic-11-dao-hibernate: Uso Spring con Hibernate. Tratamiento de relaciones múltiples entre clases.
-- spring-basic-12-dao-hibernate-jpa: Uso de Spring con JPA empleando Hibernate como proveedor de persistencia. Tratamiento de realaciones múltiples entre clases.
-- spring-basic-13-iheritance: Uso de JPA con Spring. Tratamiento de jerarquías de herencia usando Hibernate. Toplink no parece soportar la estrategia de herencia "TABLE_PER_CLASS", mientras que hibernate s�. Ver los comentarios a la clase "Persona.java".
+- spring-basic-08-dao-jdbc: Use of Spring using JDBC as data access technology.
+- spring-basic-09-dao-jdbc: Use of Spring using JDBC as data access technology, but using a less common coding strategy.
+- spring-basic-10-dao-jpa: Use of JPA with Spring. Treatment of multiple relationships between classes.
+- spring-basic-11-dao-hibernate: Using Spring with Hibernate. Treatment of multiple relationships between classes.
+- spring-basic-12-dao-hibernate-jpa: Use of Spring with JPA using Hibernate as a persistence provider. Treatment of multiple relationships between classes.
+- spring-basic-13-iheritance: Use of JPA with Spring. Treatment of inheritance hierarchies using Hibernate. (NOTE: Toplink does not seem to support the "TABLE_PER_CLASS" inheritance strategy, while hibernate does. See the comments to the class "Person.java")
 - spring-basic-14-roles:
-- spring-basic-15-aspects: Creación de aspectos, advice e introducciones.
-- spring-basic-16-aspects: Creación de anotaciones y su uso con aspectos.
-- spring-basic-17-aspects: Creación de anotaciones, uso con aspectos con persistencia integrada.
-- spring-basic-18-mvc: Controladores básicos
-- spring-basic-19-mvc: Uso de Mapeadores
-- spring-basic-20-mvc: Configuración de log4j
-- spring-basic-21-mvc: Uso de un Multiaccióncontroller
-- spring-basic-22-mvc: Procesamiento de formularios con SimpleFormController
+- spring-basic-15-aspects: Creation of aspects, advice and introductions.
+- spring-basic-16-aspects: Creation of annotations and their use with aspects.
+- spring-basic-17-aspects: Creation of annotations, use with aspects with integrated persistence.
+- spring-basic-18-mvc: Basic controllers.
+- spring-basic-19-mvc: Use of Mappers.
+- spring-basic-20-mvc: Log4j configuration.
+- spring-basic-21-mvc: Use of a multi-action controller.
+- spring-basic-22-mvc: Form processing with SimpleFormController.
